@@ -169,7 +169,7 @@ function drawWaves(offset) {
     // Draw waves
     let offsetY = (-1 * offset);
     for (i = 0; i < waves.length; i++) {
-        fill(waves[i].rgb_color);
+        fill(waves[i].getColor());
         for (let x = 0; x <= width; x += waveRes) {
             if (waves[i].getDir() == '-') {
                 noiseVal = noise(map(x,0,width,0,nsX) + offset, map(waves[i].y,0,height,0,nsY) + offsetY);
@@ -202,7 +202,7 @@ function drawWaves(offset) {
 
 
 function preload() {
-    myFont = loadFont("../src/resources/cqmono.otf");
+    myFont = loadFont("./src/resources/cqmono.otf");
 
 }
 
