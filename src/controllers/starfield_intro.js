@@ -18,7 +18,7 @@ let y_txt0 = 54;
 let intro_offset = 18;
 let char_sp = 77;
 let font_size = 160;
-let change_P = 0.09;
+let change_P = .25;
 
 // Color train
 // float[][] train = new float[name_txt.length()][3];
@@ -32,7 +32,7 @@ let stars = [];
 
 
 function preload() {
-  myFont = loadFont('./src/resources/cqmono.otf');
+  myFont = loadFont('../src/resources/cqmono.otf');
 }
 
 
@@ -52,7 +52,7 @@ function setup() {
   }
   
 
-  title = new Title('sausagemcburn', char_sp, x_txt0, y_txt0, change_P);
+//  title = new Title('sausagemcburn', char_sp, x_txt0, y_txt0, change_P);
   
 }
 
@@ -69,6 +69,11 @@ function draw() {
   }
  
   // Draw text
-  title.drawSelf();
+  //title.drawSelf();
 
 }
+
+function mouseClicked() {
+  window.location.href = 'https://www.twitch.tv/sausagemcburn';
+}
+
