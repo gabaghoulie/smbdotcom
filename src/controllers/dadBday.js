@@ -4,21 +4,21 @@
 // Code for: https://youtu.be/17WoOqgXsRM
 
 // -------- SAUSAGEMCBUILT-IN VARIABLES --------
-let sizeX = 1920;
-let sizeY = 1080;
+let sizeX = windowWidth;
+let sizeY = windowHeight;
 
-let num_stars = 500;
+let num_stars = 444;
 let speed = 5;
 
 // Text overlay info + offsets
-let name_txt = "";
-let x_txt0 = (-sizeX / 4) - 33;
-let y_txt0 = 54;
+// let name_txt = "";
+// let x_txt0 = (-sizeX / 4) - 33;
+// let y_txt0 = 54;
 // let saus_offset = 115;
-let intro_offset = 18;
-let char_sp = 77;
-let font_size = 160;
-let change_P = 0.09;
+// let intro_offset = 18;
+// let char_sp = 77;
+// let font_size = 160;
+// let change_P = 0.09;
 
 // Color train
 // float[][] train = new float[name_txt.length()][3];
@@ -50,10 +50,6 @@ function setup() {
   for (let i = 0; i < num_stars; i++) {
     stars.push(new Star());
   }
-  
-
-  title = new Title('sausagemcburn', char_sp, x_txt0, y_txt0, change_P);
-  
 }
 
 function draw() {
@@ -71,4 +67,8 @@ function draw() {
   // Draw text
   title.drawSelf();
 
+}
+
+function windowResized() {
+   resizeCanvas(windowWidth, windowHeight);
 }
