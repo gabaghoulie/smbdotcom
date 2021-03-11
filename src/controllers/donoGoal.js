@@ -3,9 +3,9 @@
 
 // GLOBO GYM PURPLE COBRAS
 // General stuff
-let title = 'camera mount for COOKING STREAMS';
-let current = 15;
-let goal = 90;
+let title = 'nip implants';
+let goal = 2000;
+let current = 420;
 let proportion = current / goal;
 let showPercentage = true;
 
@@ -24,8 +24,8 @@ let barFontSize = 28;
 
 // Color train stuff
 let ct = [];
-let shade_width = 8;
-let frame_rate = 9;
+let shade_width = 3;
+let frame_rate = 10;
 let num_shades = Math.floor(bar_width / shade_width);
 let extra_pixels = Math.floor(bar_width % shade_width);
 
@@ -104,7 +104,7 @@ function drawMoneys() {
 
 function preload() {
 	// gotta preload font for some reason? idk
-	myFont = loadFont('../resources/cqmono.otf');
+	myFont = loadFont('./src/resources/cqmono.otf');
 }
 
 function setup() {
@@ -128,7 +128,11 @@ function setup() {
 }
 
 function draw() {
-  
+ 
+	if (random() < 0.005) { 
+	color1 = generateRandomColor();
+	color2 = generateRandomColor();
+	ct = generateColorTrain(color1, color2);}
     drawProgressBar(ct);
     drawMoneys();
 
