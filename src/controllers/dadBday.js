@@ -4,11 +4,12 @@
 // Code for: https://youtu.be/17WoOqgXsRM
 
 // -------- SAUSAGEMCBUILT-IN VARIABLES --------
-let sizeX = windowWidth;
-let sizeY = windowHeight;
 
-let num_stars = 444;
-let speed = 5;
+var num_stars;
+var speed;
+var stars;
+
+var img;
 
 // Text overlay info + offsets
 // let name_txt = "";
@@ -27,23 +28,24 @@ let speed = 5;
 // I create an array named "stars",
 // it will be filled with x elements made with the Star() class.
 
-let stars = [];
+
 
 
 
 function preload() {
-  myFont = loadFont('./src/resources/cqmono.otf');
+  // myFont = loadFont('./src/resources/cqmono.otf');
+  img = loadImage('../src/resources/1-hooters.png');
 }
 
 
 function setup() {
-  createCanvas(sizeX, sizeY);
-  // I fill the array with a for loop;
-  // running 800 times, it creates a new star using the Star() class.
-  // for (let i = 0; i < stars.length; i++) {
-  //   stars[i] = new Star();
-  // }
-  textFont(myFont, font_size);
+  // let sizeX = windowWidth;
+  // let sizeY = windowHeight;
+  createCanvas(windowWidth, windowHeight);
+
+  num_stars = 444;
+  speed = 5;
+  stars = [];
 
   noStroke();
 
@@ -63,9 +65,8 @@ function draw() {
     stars[i].update();
     stars[i].show();
   }
- 
-  // Draw text
-  title.drawSelf();
+
+  image(img, width * 0.1, height * 0.05);
 
 }
 
