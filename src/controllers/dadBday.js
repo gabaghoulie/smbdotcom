@@ -135,4 +135,5 @@ function mouseClicked() {
   else if (img_idx > 9) {
     window.location.href = 'https://youtu.be/b8tPX7Km4P8';
   }
+  return false;
 }
